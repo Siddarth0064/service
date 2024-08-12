@@ -35,3 +35,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+let navLinks = document.querySelectorAll('.navbar li');
+menuIcon.onclick=()=>{
+    menuIcon.classList.toggle('fa-xmark');
+    navbar.classList.toggle('active');
+
+}
+// Close the navbar when any nav link is clicked
+navLinks.forEach(link => {
+    link.onclick = () => {
+        menuIcon.classList.remove('fa-xmark');
+        navbar.classList.remove('active');
+    };
+});

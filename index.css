@@ -20,7 +20,11 @@ body {
     font-size: 18px;
     color: #333;
 }
-
+#menu-icon{
+    font-size:3.6rem ;
+    color: var(--text-color);
+    display: none;
+}
 .icon-wrapper.show {
     opacity: 1; /* Fade in */
     transform: translateY(0); /* Slide down into place */
@@ -405,10 +409,29 @@ form button {
 }
 @media (max-width: 768px) {
     nav ul {
-        white-space: nowrap;
-        flex-direction: row; /* Stack menu items vertically */
-        align-items: flex-start; /* Align items to the left */
-        margin: auto auto;
+        position: absolute;
+        flex-direction: column;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+      border-top: .1rem solid rgba(0,0,0,.2);
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+      display: none;
+    }
+    .navbar.active{
+        display: flex;
+    }
+    .navbar li {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    #menu-icon{   
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
     }
     #typed-output{
         white-space: nowrap;
@@ -420,9 +443,10 @@ form button {
     }
     
     .project-container, .service-box {
-        flex-direction: column;
-        gap: 20px;
-        justify-content: center;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 20px; /* Spacing between items */
     }
 
     section, #projects, #services {
