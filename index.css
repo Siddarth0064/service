@@ -408,6 +408,9 @@ form button {
     color: #1f1f1f; /* Change this to match your theme */
 }
 @media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em; /* Slightly smaller font size for better fit */
+    }
     nav ul {
         position: absolute;
         flex-direction: column;
@@ -442,11 +445,11 @@ form button {
         margin-bottom: 20px;
     }
     
-    .project-container, .service-box {
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-        gap: 20px; /* Spacing between items */
+    .project-container, .service-box-inner {
+       
+        width: 100%; /* Ensures the container takes full width of the viewport */
+        max-width: 100%; /* Prevents overflow */
+        box-sizing: border-box; /* Includes padding and border in element's total width and height */
     }
 
     section, #projects, #services {
@@ -470,9 +473,9 @@ form button {
     }
 
     footer {
-        padding: 10px;
-        font-size: 0.9em;
-    }
+        padding: 1rem;
+        font-size: 0.8em; /* Adjust font size for smaller screens */
+    }  
 
     .icon-wrapper .icon-text {
         font-size: 16px;

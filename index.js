@@ -8,10 +8,10 @@ document.querySelector('form').addEventListener('submit', function(e) {
 
 document.addEventListener('DOMContentLoaded', function() {
     var options = {
-        strings: ["Crafting Exceptional Digital Experiences", 
-            "Creating Outstanding Portfolios",
-             "Delivering Remarkable Projects", 
-             "Offering Premium Services"],
+        strings: ["Creating Digital Solutions", 
+                  "Crafting Impressive Portfolios",
+                  "Delivering Remarkable Projects", 
+                  "Offering Premium Services"],
         typeSpeed: 40,
         backSpeed: 10,
         loop: true,
