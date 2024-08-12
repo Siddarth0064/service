@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Development Showcase</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+ </head>
+<body>
+    <header>
+        <h1><span id="typed-output"></h1>
+        <p>Dive into my world of innovative web projects and tailored services</p>
+    </header>
+
+    <nav>
+        <img src="logo_img.png" alt="" id="logo">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About <span>Me</span></h2>
+        <p>Hello! I am a passionate software developer with a knack for creating impactful digital experiences. With a solid background in developing software tools, I now focus on enhancing social connectivity by building engaging and functional websites. My expertise spans across creating stunning portfolios, interactive gaming websites, and tailored personal websites, all designed to meet individual needs and academic requirements.</p>
+        <p>Whether you're looking to showcase your work, develop an online presence, or need a dedicated website for your academic or professional projects, I am here to help. My goal is to provide affordable and high-quality web development services that cater to your specific needs. Let's work together to bring your vision to life!</p>
+    </section>
+    
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-container">
+            <div class="project-card">
+                <img src="portfolios.jpg" alt="Portfolio website" class="project-image" >
+                <h3>Portfolio Website</h3>
+                <p>A showcase of my work and skills.</p>
+                <a href="https://siddarth0064.github.io/Portfolio/">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="gaming.jfif" alt="Portfolio website" class="project-image" >
+                <h3>Gaming Website</h3>
+                <p>A platform for playing and developing games.</p>
+                <a href="https://siddarth0064.github.io/https---github.com-Siddarth0064-TechGamerZone/homepage.html">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>My Services</h2>
+        <div class="service-container">
+            <div class="service-box">
+                <div class="service-box-inner">
+                    <div class="service-box-front">
+                        <img src="web-desging-service-img.jpeg" alt="Personal Webpages" class="project-image">
+                        <h3>Personal Webpages</h3>
+                        <p>Customized personal websites to showcase your profile.</p>
+                    </div>
+                    <div class="service-box-back">
+                        <h3>Personal Webpages</h3>
+                        <p> 
+                            I create personalized, professional websites tailored to your specific needs and goals. Whether you're looking to showcase your skills, portfolio, or personal brand, I ensure a unique design that stands out. My goal is to provide a seamless user experience that reflects your vision, making your online presence memorable to potential clients and recruiters. Let's bring your ideas to life with a website that truly represents you!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-box-inner">
+                    <div class="service-box-front">
+                        <img src="portfolio-service-img.jpeg" alt="Portfolios" class="project-image">
+                        <h3>Portfolio</h3>
+                        <p>Professional portfolios designed to highlight your work and skills.</p>
+                    </div>
+                    <div class="service-box-back">
+                        <h3>Portfolio</h3>
+                        <p>
+                            I develop stunning, personalized portfolio websites that effectively showcase your talents, achievements, and projects. Each portfolio is crafted to captivate your audience, making your skills and experience shine. Whether you're an artist, developer, or professional in any field, I ensure your portfolio leaves a lasting impression on potential clients and employers. Let’s create a digital portfolio that truly represents your expertise!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-box-inner">
+                    <div class="service-box-front">
+                        <img src="academic-projects-img.jpg" alt="Academic Projects" class="project-image">
+                        <h3>Academic Projects</h3>
+                        <p>Developing academic projects for your coursework or thesis.</p>
+                    </div>
+                    <div class="service-box-back">
+                        <h3>Academic Projects</h3>
+        <p>
+            I specialize in developing high-quality academic projects, including both mini and main projects tailored to your coursework or thesis requirements. Whether you need a complex final-year project or a smaller-scale assignment, I provide innovative and well-researched solutions that stand out. My projects not only meet academic standards but also impress professors and recruiters, showcasing your skills and knowledge in your field. Let's collaborate to make your academic work exceptional!
+        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form name="submit-to-google-sheet" action="#">
+         <div class="input-box">
+             <input type="text" name="Full Name" placeholder="Full Name">
+             <input type="number" name="Mobile Number" placeholder="Mobile Number">
+         </div>
+         <textarea cols="30" rows="10" name="Message" placeholder="Your Message"></textarea>
+         <input  type="submit" value="Send Message" class="btn">
+        </form>
+        <span id="msg"></span>
+     </section>
+     <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzLQG7iMTgdXxo8ydXq60MYZcholV87aJujFBAKd7FluR8VgNRHYjFSIc9GDky9mpqdPg/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg");
+        
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Message Sent Successfully";
+                msg.classList.add("visible");
+                form.classList.add("hidden");
+                setTimeout(() => {
+                msg.classList.remove("visible");
+                form.classList.remove("hidden");
+                form.reset();
+            }, 1500); // Adjust the delay as needed
+        })
+        .catch(error => console.error('Error!', error.message));
+});
+      </script>
+
+    <footer>
+        <p>&copy; 2024 My Web Development Showcase</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

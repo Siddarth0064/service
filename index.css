@@ -1,0 +1,475 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Background color matching your portfolio */
+    padding-bottom: 60px; /* Add padding equal to the footer's height */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-20px); /* Start above the section */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.icon-wrapper .icon-text {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.icon-wrapper.show {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide down into place */
+}
+
+header {
+    background-color: #1f1f1f; /* Darker background for the header */
+    color: #ffffff; /* White text for better contrast */
+    padding: 10px 0;
+    text-align: center;
+}
+span{
+    color: #1565c0;
+    padding-right: 0;
+    margin-right: 0;
+    letter-spacing: 0;
+    line-height: 1; /* Ensure no extra space above or below */
+    font-weight: bold; /* Optional: Make the letter stand out more */
+}
+#logo{
+    height: 100%;
+    max-height: 50px;
+    margin-right: auto;
+}
+#logo:hover {
+    transform: scale(3.1); /* Slightly enlarge the logo on hover */
+    filter: drop-shadow(2px 4px 6px blue);
+    transition: transform 3s ease-in-out, filter 3s ease-out;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #282828;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    /* font-size: 16px; */
+}
+nav ul li a:hover {
+    color: #1565c0;
+   
+}
+
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #282828; /* Dark background for sections */
+    color: #ffffff; /* White text for better readability */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Softer shadow effect */
+}
+
+
+/* PROJECTS STYLES */
+
+#projects {
+    background-color: #282828; /* Match your overall theme */
+    padding: 40px 0;
+    text-align: center;
+}
+
+#projects h2 {
+    color: #fff; /* Heading color */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.project-container {
+    display: flex;
+    justify-content:center;
+    padding: 20px 0;
+    gap: 30px; 
+    flex-wrap: wrap;
+
+}
+
+.project-card {
+    background-color: #1f1f1f; /* Dark background for project cards */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    width: 30%; /* Fixed width for consistency */
+    transition: transform 0.3s ease-in-out; /* Animation on hover */
+  
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    border-radius: 10px; /* Adjust this value if you want to change the corner rounding */
+    box-shadow: 0 4px 30px rgba(35, 126, 230, 0.5); /* Blue shadow effect */
+}
+
+.project-card h3 {
+    color: #1565c0; /* Accent color for project titles */
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #fff; /* Text color for descriptions */
+    margin-bottom: 15px;
+}
+
+.project-card a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #1565c0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.project-card a:hover {
+    background-color: #0a4c96; /* Darker shade on hover */
+}
+
+/* MY SERVICE STYLING  */
+#services h2{
+    margin-bottom: 20px;
+}
+#services {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px; /* Optional: Add padding around the section */
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line if there's not enough space */
+    justify-content: space-around; /* Distributes space between the service boxes */
+    gap: 100px; /* Space between service boxes */
+    padding: 20px 0; /* Padding inside the container */
+    max-width: 1200px; /* Optional: Restricts the container width */
+    width: 100%; /* Ensures the container takes full width */
+}
+.service-box {
+    width: 30%;
+    position: relative; /* Needed for absolute positioning of inner elements */
+    flex: 1 1 calc(30% - 40px); /* Adjusts the box size considering the gap */
+    margin: 20px 0; /* Adds vertical spacing between rows of service boxes */
+    height: 300px; /* Adjust as needed */
+    perspective: 2000px; /* Adds depth to the 3D effect */
+    box-sizing: border-box; /* Ensures padding and borders are included in the width and height */
+    transition: transform 0.3s ease;
+}
+.service-box-inner {
+    position: absolute; /* Make sure it fills the entire .service-box */
+    top: 0; /* Aligns to the top of the .service-box */
+    left: 0; /* Aligns to the left of the .service-box */
+    width: 100%; /* Makes sure it fills the entire width */
+    height: 100%; /* Makes sure it fills the entire height */
+    margin: 0; /* Remove margin to prevent overflow */
+    padding: 20px; /* Padding inside the box */
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column; /* Ensures the text is stacked vertically */
+    align-items: center; /* Centers the content within the box */
+    transition: transform 0.6s;
+    transform-style: preserve-3d; /* Allows the flip effect */
+    backface-visibility: hidden; /* Hides the back side when facing away  */
+}
+
+.service-box:hover .service-box-inner {
+    transform: rotateY(180deg); /* Flips the box */
+}
+
+.service-box-front,
+.service-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back side when facing away  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 0 35px rgba(6, 104, 241, 0.5); */
+    background-color: #1f1f1f;
+} 
+
+.service-box-front {
+    z-index: 2;
+    backface-visibility: hidden; /* Hides the back side when facing away  */
+
+    /* background-color: #1f1f1f; Background for the front side */
+}
+
+.service-box-back {
+    transform: rotateY(180deg); /* Hides the back side initially */
+    background-color: #333; /* Different background for the back side */
+    color: #fff;
+    box-shadow: 0 0 35px rgba(6, 104, 241, 0.5); 
+    /* Ensure this is underneath the front side initially */
+}
+
+.service-box img {
+    width: 100%; /* Ensures the image fits within the box */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+ .service-box p {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+.service-box h3{
+    color: rgb(8, 208, 243);
+    
+}
+
+/* .service-box h3 {
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    color: #ffffff;
+    margin-bottom: 0;
+} */
+
+
+
+
+footer {
+    background-color: #1f1f1f; /* Matching footer color with header */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    /* position: fixed; */
+    width: 100%;
+    bottom: 0;
+    height: 30px; /* Set a specific height for the footer */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff; /* White labels */
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #444444; /* Slightly darker border */
+    background-color: #333333; /* Dark background for inputs */
+    color: #ffffff; /* White text in inputs */
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #4659e5; /* Matching button color with nav */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1565c0; /* Slightly darker shade on hover */
+}
+.project-image {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Optional: Rounds the corners */
+    margin-bottom: 15px; /* Optional: Adds space below the image */
+}
+
+
+
+/* @media  (max-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+    }
+    .service-box {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    section, #projects, #services {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #projects h2 {
+        font-size: 2em; /* Adjust heading size for smaller screens 
+    }
+}  */
+
+
+/* About section animation */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#about {
+    padding: 50px;
+    background-color: #282828;
+    animation: slideInRight 1s ease-in-out;
+}
+
+/* Project card animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.project-card:nth-child(odd) {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.project-card:nth-child(even) {
+    animation: slideInRight 1s ease-in-out;
+}
+
+/* Service box animations (similar to projects) */
+.service-box:nth-child(odd) {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.service-box:nth-child(even) {
+    animation: slideInRight 1s ease-in-out;
+}
+#typed-output {
+    color: #007bff; /* Change this to match your theme */
+    font-weight: bold;
+}
+
+.typed-cursor {
+    font-size: 1.2em;
+    color: #1f1f1f; /* Change this to match your theme */
+}
+@media (max-width: 768px) {
+    nav ul {
+        white-space: nowrap;
+        flex-direction: row; /* Stack menu items vertically */
+        align-items: flex-start; /* Align items to the left */
+        margin: auto auto;
+    }
+    #typed-output{
+        white-space: nowrap;
+    }    
+    .service-box {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .project-container, .service-box {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    section, #projects, #services {
+        padding: 20px;
+        margin: 10px 0;
+    }
+
+    #projects h2, #services h2 {
+        font-size: 1.5em; /* Smaller heading size */
+    }
+
+    .project-card, .service-box {
+        width: 70%; /* Full width for mobile screens */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Softer shadow for mobile screens */
+        margin-bottom: 20px; /* Add spacing between items */
+    }
+
+    .project-image, .service-box img {
+        width: 70%; /* Ensure images are responsive */
+        height: auto;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .icon-wrapper .icon-text {
+        font-size: 16px;
+    }
+
+    .service-box-inner {
+        padding: 15px;
+    }
+}
+@media (max-width: 768px) {
+    .service-box-inner {
+        transition: transform 0.5s ease; /* Faster transition for smaller screens */
+    }
+}
+form button, nav ul li a {
+    padding: 12px 20px;
+    font-size: 16px; /* Larger font size for better tap targets */
+}
+
+.project-card a, .service-box a {
+    font-size: 16px;
+    padding: 12px 15px;
+}
+
